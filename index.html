@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="description" content="人物も風景も、まとめて自然に。iPhoneで使える無料の写真補正ツール。写真は端末内で処理します。" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <title>ふわり｜写真を、まとめていい感じに。</title>
+  <script type="module" crossorigin src="./assets/index-BI-jLW6Q.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D3ugSltt.css">
+</head>
+<body>
+  <header class="header"><a class="brand" href="./" aria-label="ふわり ホーム"><span class="brand-icon">✳</span> ふわり<span class="brand-en">FUWARI</span></a><span class="local-tag"><span></span>写真は端末の中だけ</span></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">いつもの写真に、ひとさじの仕上げ。</p>
+      <h1>まとめて、<br class="mobile-br" />いい感じに。</h1>
+      <p class="lead">人物はやさしく、風景は鮮やかに。<br />ビビッドも、アートな色も、好みの一枚へ。</p>
+      <div class="hero-art" aria-hidden="true"><div class="art-photo landscape"><i class="sun"></i><i class="hill h1"></i><i class="hill h2"></i><span>色を、いきいきと。</span></div><div class="art-photo portrait"><i class="head"></i><i class="body"></i><span>肌を、やさしく。</span></div><b class="sparkle">✧</b></div>
+    </section>
+    <section class="workspace" aria-label="写真の補正">
+      <div class="section-heading"><div><span class="step">01</span><h2>写真を選ぶ</h2></div><span class="muted">一度に20枚まで</span></div>
+      <label id="drop-zone" class="drop-zone" for="photos"><span class="plus-icon">＋</span><strong>写真をまとめて選ぶ</strong><span>人物も風景も、一緒で大丈夫</span><input id="photos" type="file" accept="image/*,.heic,.heif" multiple /></label>
+      <p class="selection-note" id="selection-note">元の写真は、そのまま残ります。</p>
+      <div class="section-heading finish-heading"><div><span class="step">02</span><h2>仕上がりを選ぶ</h2></div></div>
+      <p id="preview-note" class="preview-note">写真を選ぶと、その写真の仕上がり見本が並びます。</p>
+      <div id="preview-picker" hidden><label for="preview-source">見本の写真</label><select id="preview-source"></select></div>
+      <fieldset id="style-controls"><legend class="sr-only">色の仕上がり</legend><div id="preset-grid" class="styles"></div></fieldset>
+      <div class="intensity-row"><label for="intensity">フィルターの強さ <output id="intensity-value" for="intensity">100%</output></label><input type="range" id="intensity" min="0" max="150" step="5" value="100" /><div class="range-labels"><span>0% · 元の色</span><span>150% · 大胆に</span></div></div>
+      <div id="live-preview" hidden><div class="preview-toolbar"><strong id="live-preset-name">ビューティー</strong><button id="preview-original" class="text-button" aria-pressed="false">元の写真と比較</button></div><canvas id="live-canvas" aria-label="選択したフィルターの色の見本"></canvas><p class="preview-caption">美顔と色の見本です（小さめの画像で表示）。</p></div>
+      <div class="beauty-row"><div><label for="beauty"><strong>人物の美顔</strong></label><p>シワを減らし、肌を明るく、輪郭をすっきり</p></div><select id="beauty"><option value="0">なし</option><option value="0.5">ナチュラル</option><option value="1" selected>しっかり</option><option value="1.4">最大</option></select></div>
+      <div class="action-row"><button id="process" class="primary" disabled><span>✧</span> まとめて整える</button><button id="cancel" class="secondary" hidden>中止する</button></div>
+      <div id="progress-wrap" hidden><progress id="progress" max="1" value="0"></progress><p id="progress-text" role="status" aria-live="polite"></p><p class="muted">加工中は、この画面を開いたままにしてください。</p></div>
+      <p id="notice" role="status" aria-live="polite"></p>
+    </section>
+    <section id="results-section" class="results-section" hidden>
+      <div class="section-heading"><div><span class="step">03</span><h2>仕上がりを確認</h2></div><button id="clear" class="text-button">すべて片付ける</button></div>
+      <p class="muted">写真をタップして、元の写真と見比べられます。</p>
+      <div id="results" class="results"></div>
+      <div id="save-panel" class="save-panel" hidden><div><strong id="save-summary"></strong><p>「まとめて保存」→ 共有画面の「○枚の画像を保存」で、全部まとめて写真アプリへ。</p></div><div class="save-actions"><button id="save-all" class="primary">まとめて保存</button><button id="save-next" class="secondary" hidden>5枚ずつ保存</button><button id="download-zip" class="text-button">ZIPでダウンロード</button></div><p id="save-status" role="status"></p></div>
+    </section>
+    <section class="how-it-works"><div><span>✧</span><strong>あなたらしさは、そのまま</strong><p>顔の形は変えず、肌を自然になめらかに。</p></div><div><span>⌂</span><strong>写真を送らず、手元で加工</strong><p>写真のアップロードは不要。<br />加工機能に利用料はかかりません。</p></div></section>
+    <details class="help"><summary>使い方と、知っておきたいこと</summary><div><p>iOS 17以降のSafariを推奨します。共有メニューから「ホーム画面に追加」すると、次からアプリのように開けます。</p><p>保存はJPEG、長辺最大2,048px。SNSや日常の共有向けです。HEICは読み込み時に変換します。Live Photos・HDRは静止画の標準色（SDR）になります。元写真は変更しません。</p><p>小さい顔・横顔・暗い写真では顔を見つけられないことがあります。その場合は色と明るさだけを整えます。肌の凹凸を和らげる簡易補正で、シミを完全に消す処理や顔の変形は行いません。</p><p>写真はこの画面のメモリで扱い、外部へ送信しません。画面を再読み込みすると写真と加工結果は消えるので、先に保存してください。初回は顔を見つけるためのデータを読み込みます。</p><p>「まとめて保存」はiPhoneの共有画面を開きます。「○枚の画像を保存」を押すと全部まとめて写真アプリに入ります。うまくいかない場合は「5枚ずつ保存」、または各写真の「保存」を使ってください。</p><p id="offline-status">初回の利用にはインターネット接続が必要です。</p><p class="credits">顔検出：Google MediaPipe／HEIC変換：heic2any／ZIP：fflate · <a href="./licenses.txt">オープンソースライセンス</a></p></div></details>
+  </main>
+  <footer>ふわり <span>― 毎日の写真を、ちょっと好きに。</span><small>試作版 1.1</small></footer>
+  <dialog id="viewer"><div class="viewer-head"><strong id="viewer-title">仕上がりを確認</strong><button id="viewer-close" aria-label="閉じる">×</button></div><div class="compare-tabs"><button id="show-after" aria-pressed="true">加工後</button><button id="show-before" aria-pressed="false">元の写真</button></div><img id="viewer-image" alt="選択した写真" /><p id="viewer-info"></p><div class="viewer-actions"><button id="viewer-save" class="primary">この写真を保存</button><button id="viewer-no-skin" class="secondary">美顔なしで作り直す</button></div></dialog>
+</body>
+</html>
